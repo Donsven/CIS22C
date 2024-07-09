@@ -1,1 +1,1 @@
-# This is the README file to confirm that it's been cloned correctly
+# This is the first assignment for CIS22C. This Lab will set the template for our future labs.
