@@ -32,14 +32,19 @@ NAME: NELSON LEE, CHRISTINA VO
 PURPOSE OF THIS ASSIGNMENT:  DEMONSTRATING THE DIFFERENCE BETWEEN ITERATION AND RECURSION BY CHECKING IF ALL ELEMENTS OF AN ARRAY ARE PRIME.
 */
 
-/*
-PSEUDOCODE + PRE/POST LAB HEADERS GOES BEFORE RELAVENT 3 CODE BLOCKS
-//
-*/
+
 
 #include <iostream>
 #include <cmath>
 using namespace std;
+
+/*
+PSEDUOCODE:
+Pre: arr -- a non-empty array of integer numbers
+        size -- the number of elements inside 'arr'
+Post:
+Return: true or false
+*/
 
 bool IsArrayPrimeIter(int arr[], int size) {
     bool isPrime = true;
@@ -54,6 +59,14 @@ bool IsArrayPrimeIter(int arr[], int size) {
     cout << "Leaving IsArrayPrimeIter" << endl;
     return isPrime;
 }
+
+/*
+PSEDUOCODE:
+Pre: num -- an integer used to check if a number is prime
+         divisor -- an integer used to check if a number can be divisible
+Post:
+Return: true or false
+*/
 
 bool IsPrimeRecur(int num, int divisor) {
     cout << "Entering IsPrimeRecur" << endl;
@@ -73,6 +86,15 @@ bool IsPrimeRecur(int num, int divisor) {
     cout << "Leaving IsPrimeRecur" << endl;
     return result;
 }
+
+/*
+PSEDUOCODE:
+Pre:    arr -- a non-empty array of integer numbers
+        size -- the number of elements inside 'arr'
+Post:
+Return: true or false
+
+*/
 
 bool IsArrayPrimeRecur(int arr[], int size) {
     cout << "Entering IsArrayPrimeRecur" << endl;
@@ -97,14 +119,15 @@ int main() {
     cout << "Enter the number of elements in the array: ";
     cin >> numInts;
 
-    if (numInts > SORT_MAX_SIZE) {
-        numInts = SORT_MAX_SIZE;
-    }
-    
     if(numInts < 1){
         cout << "Invalid array size entered, please try again";
         return 0;
     }
+
+    if (numInts > SORT_MAX_SIZE) {
+        numInts = SORT_MAX_SIZE;
+    }
+    
     int arr[SORT_MAX_SIZE];
     cout << "Enter the elements of the array: ";
     for (int i = 0; i < numInts; i++) {
