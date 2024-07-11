@@ -37,7 +37,91 @@ PSEUDOCODE + PRE/POST LAB HEADERS GOES BEFORE RELAVENT 3 CODE BLOCKS
 //
 */
 
-
 #include <iostream>
-
+#include <cmath>
 using namespace std;
+
+bool IsArrayPrimeIter(int arr[], int size) {
+    bool isPrime = true;
+    cout << "Entering IsArrayPrimeIter" << endl;
+    for (int i = 0; i < size; i++) {
+        for (int h = 2; h <= sqrt(arr[i]); h++) {
+            if (arr[i] % h == 0) {
+                isPrime = false;
+            }
+        }
+    }
+    cout << "Leaving IsArrayPrimeIter" << endl;
+    return isPrime;
+}
+
+bool IsPrimeRecur(int num, int divisor) {
+    cout << "Entering IsPrimeRecur" << endl;
+    if (num <= 1) {
+        cout << "Leaving IsPrimeRecur" << endl;
+        return false;
+    }
+    if (divisor == 1) {
+        cout << "Leaving IsPrimeRecur" << endl;
+        return true;
+    }
+    if (num % divisor == 0) {
+        cout << "Leaving IsPrimeRecur" << endl;
+        return false;
+    }
+    bool result = IsPrimeRecur(num, divisor - 1);
+    cout << "Leaving IsPrimeRecur" << endl;
+    return result;
+}
+
+bool IsArrayPrimeRecur(int arr[], int size) {
+    cout << "Entering IsArrayPrimeRecur" << endl;
+    if (size == 0) {
+        cout << "Leaving IsArrayPrimeRecur" << endl;
+        return true;
+    }
+    if (!IsPrimeRecur(arr[size - 1], arr[size - 1] - 1)) {
+        cout << "Leaving IsArrayPrimeRecur" << endl;
+        return false;
+    }
+    bool result = IsArrayPrimeRecur(arr, size - 1);
+    cout << "Leaving IsArrayPrimeRecur" << endl;
+    return result;
+}
+
+
+
+int main() {
+    const int SORT_MAX_SIZE = 16;
+    int numInts;
+    cout << "Enter the number of elements in the array: ";
+    cin >> numInts;
+
+    if (numInts > SORT_MAX_SIZE) {
+        numInts = SORT_MAX_SIZE;
+    }
+    
+    if(numInts < 1){
+        cout << "Invalid array size entered, please try again";
+        return 0;
+    }
+    int arr[SORT_MAX_SIZE];
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < numInts; i++) {
+        cin >> arr[i];
+    }
+
+    if (IsArrayPrimeIter(arr, numInts)) {
+        cout << "Prime Array using iteration" << endl;
+    } else {
+        cout << "Not a Prime Array using iteration" << endl;
+    }
+
+    if (IsArrayPrimeRecur(arr, numInts)) {
+        cout << "Prime Array using recursion" << endl;
+    } else {
+        cout << "Not a Prime Array using recursion" << endl;
+    }
+
+    return 0;
+}
