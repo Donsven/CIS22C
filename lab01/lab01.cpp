@@ -1,10 +1,5 @@
 
 /*
-All code files to be submitted as part of the submission should have a name block at the top.
-The name block should clearly indicate
-the Lab Number,
-the name of the person, and
-a one line statement explaining the purpose of the assignment.
 Your code files should also include
 pre/post headers as discussed in the documentation guidelines in the first week of class, and
 have a comment block of pseudocode as necessary just before the relevant section of the code.
@@ -15,15 +10,6 @@ NumInts = 5, Ints = 53 5099 1223 567 17
 NumInts = 4, Ints = 1871 8069 3581 6841
 Remember to take multiple screenshots of the both the runs so that they are clearly readable without needing to zoom in.
 For documentation, include your name block as well pre/post and pseudocode for the 3 functions which are not 'main'. For pre/post documentation and pseudocode examples,
- 
-
-Things to remember:
-
-Only submissions in ZIP file format will be accepted - no gzip, 7z, tar, rar or any other file format.
-Not including the name block will result in a 10% penalty.
-Not including screenshots will result in a 10% penalty.
-Not including pseudocode where necessary will result in a 20% penalty.
-Not including pre/post headers will result in a 20% penalty.
 */
 
 /*
@@ -50,6 +36,10 @@ bool IsArrayPrimeIter(int arr[], int size) {
     bool isPrime = true;
     cout << "Entering IsArrayPrimeIter" << endl;
     for (int i = 0; i < size; i++) {
+        if(arr[i] <= 1){
+            isPrime = false;
+            break;
+        }
         for (int h = 2; h <= sqrt(arr[i]); h++) {
             if (arr[i] % h == 0) {
                 isPrime = false;
@@ -62,8 +52,8 @@ bool IsArrayPrimeIter(int arr[], int size) {
 
 /*
 PSEDUOCODE:
-Pre: num -- an integer used to check if a number is prime
-         divisor -- an integer used to check if a number can be divisible
+Pre:    num -- an integer used to check if a number is prime
+        divisor -- an integer used to check if a number can be divisible
 Post:
 Return: true or false
 */
@@ -71,15 +61,12 @@ Return: true or false
 bool IsPrimeRecur(int num, int divisor) {
     cout << "Entering IsPrimeRecur" << endl;
     if (num <= 1) {
-        cout << "Leaving IsPrimeRecur" << endl;
         return false;
     }
     if (divisor == 1) {
-        cout << "Leaving IsPrimeRecur" << endl;
         return true;
     }
     if (num % divisor == 0) {
-        cout << "Leaving IsPrimeRecur" << endl;
         return false;
     }
     bool result = IsPrimeRecur(num, divisor - 1);
@@ -99,11 +86,9 @@ Return: true or false
 bool IsArrayPrimeRecur(int arr[], int size) {
     cout << "Entering IsArrayPrimeRecur" << endl;
     if (size == 0) {
-        cout << "Leaving IsArrayPrimeRecur" << endl;
         return true;
     }
     if (!IsPrimeRecur(arr[size - 1], arr[size - 1] - 1)) {
-        cout << "Leaving IsArrayPrimeRecur" << endl;
         return false;
     }
     bool result = IsArrayPrimeRecur(arr, size - 1);
@@ -134,17 +119,36 @@ int main() {
         cin >> arr[i];
     }
 
+    cout << "------------------------------------";
+    cout << endl;
+
     if (IsArrayPrimeIter(arr, numInts)) {
         cout << "Prime Array using iteration" << endl;
+        cout << "------------------------------------";
+        cout << endl;
     } else {
         cout << "Not a Prime Array using iteration" << endl;
+        cout << "------------------------------------";
+        cout << endl;
+
     }
 
     if (IsArrayPrimeRecur(arr, numInts)) {
         cout << "Prime Array using recursion" << endl;
+        cout << "------------------------------------";
+        cout << endl;
+
     } else {
         cout << "Not a Prime Array using recursion" << endl;
+        cout << "------------------------------------";
+        cout << endl;
+
     }
 
+    char finished;
+    while(finished != 'y'){
+        cout << "Have you finished observing the output? (y/n): ";
+        cin >> finished;
+    }
     return 0;
 }
