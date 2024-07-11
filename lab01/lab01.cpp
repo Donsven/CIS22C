@@ -25,10 +25,10 @@ function IsArrayPrimeIter(arr[], size)
     return isPrime
 end function
 
-Pre: arr -- a non-empty array of integer numbers
+Pre:    arr -- a non-empty array of integer numbers
         size -- the number of elements inside 'arr'
-Post:
-Return: true or false
+Post: Prints "Entering IsArrayPrimeIter" when entering function and "Leaving IsArrayPrimeIter" before returning from function
+Return: true if all elements in 'arr' is a prime number or false if at least one element in 'arr' is not prime
 */
 
 bool IsArrayPrimeIter(int arr[], int size) {
@@ -65,10 +65,11 @@ function IsPrimeRecur (num, divisor)
 
 end function
 
-Pre:    num -- an integer used to check if a number is prime
-        divisor -- an integer used to check if a number can be divisible
-Post:
-Return: true or false
+Pre:    num -- an integer used to check if a number is prime, must greater than 1
+        divisor -- an integer used to check if a number can be divisible, must be greater than 1 and less than or equal to 'num'
+Post: Prints "Entering IsPrimeRecur" when entering function and "Leaving IsPrimeRecur" before returning from function
+Return: true if 'num' is prime from recursive check or false if 'num' is not prime from recursive check
+
 */
 
 bool IsPrimeRecur(int num, int divisor) {
@@ -106,9 +107,8 @@ end function
 
 Pre:    arr -- a non-empty array of integer numbers
         size -- the number of elements inside 'arr'
-Post:
-Return: true or false
-
+Post: Prints "Entering IsPrimeArrayRecur" when entering function and "Leaving IsPrimeArrayRecur" before returning from function
+Return: true if all elements in 'arr' are prime or false if at least one element in 'arr' is not prime 
 */
 
 bool IsArrayPrimeRecur(int arr[], int size) {
