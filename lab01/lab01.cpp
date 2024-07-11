@@ -25,7 +25,22 @@ PURPOSE OF THIS ASSIGNMENT:  DEMONSTRATING THE DIFFERENCE BETWEEN ITERATION AND 
 using namespace std;
 
 /*
-PSEDUOCODE:
+function IsArrayPrimeIter(arr[], size)
+    isPrime = true
+    print "Entering IsArrayPrimeIter"
+
+    for i = 0 to size -1
+        for h = 2 to square root of arr[i]
+            if arr[i] mod h == 0
+                isPrime = false
+            end if
+        end for
+    end for
+
+    print "Leaving IsArrayPrimeIter"
+    return isPrime
+end function
+
 Pre: arr -- a non-empty array of integer numbers
         size -- the number of elements inside 'arr'
 Post:
