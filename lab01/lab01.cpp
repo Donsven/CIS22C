@@ -25,7 +25,23 @@ PURPOSE OF THIS ASSIGNMENT:  DEMONSTRATING THE DIFFERENCE BETWEEN ITERATION AND 
 using namespace std;
 
 /*
-PSEDUOCODE:
+PSEDUOCODE: 
+function IsArrayPrimeIter(arr[], size)
+    isPrime = true
+    print "Entering IsArrayPrimeIter"
+    
+    for i = 0 to size -1
+        for h = 2 to square root of arr[i]
+            if arr[i] mod h == 0
+                ifPrime = false
+            end if
+        end for
+    end for
+
+    print "Leaving IsArrayPrimeIter"
+    return isPrime
+end function
+
 Pre: arr -- a non-empty array of integer numbers
         size -- the number of elements inside 'arr'
 Post:
@@ -52,6 +68,29 @@ bool IsArrayPrimeIter(int arr[], int size) {
 
 /*
 PSEDUOCODE:
+function IsPrimeRecur (num, divisor)
+    print "Entering IsPrimeRecur"
+    
+    if num <= 1
+        print "Leaving IsPrimeRecur"
+        return false
+    end if
+    
+    if divisor == 1
+        print "Leaving IsPrimeRecur"
+        return true
+    end if
+    
+    if num mod divisor == 0
+        print "Leaving IsPrimeRecur"
+        return false
+    end if
+    
+    result = IsPrimeRecur(num, divisor - 1)
+    print "Leaving IsPrimeRecur"
+    return result
+end function
+
 Pre:    num -- an integer used to check if a number is prime
         divisor -- an integer used to check if a number can be divisible
 Post:
@@ -76,6 +115,22 @@ bool IsPrimeRecur(int num, int divisor) {
 
 /*
 PSEDUOCODE:
+function IsArrayPrimeRecur(arr, size)
+    print "Entering IsArrayPrimeRecur"
+    
+    if size == 0
+        return true
+    end if
+    
+    if not IsPrimeRecur(arr[size - 1], arr[size - 1] -1)
+        return false
+    end if
+    
+    result = IsArrayPrimeRecur(arr, size -1)
+    print "Leaving IsArrayPrimeRecur"
+    return result
+end function
+
 Pre:    arr -- a non-empty array of integer numbers
         size -- the number of elements inside 'arr'
 Post:
