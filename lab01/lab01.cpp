@@ -51,7 +51,21 @@ bool IsArrayPrimeIter(int arr[], int size) {
 }
 
 /*
-PSEDUOCODE:
+function IsPrimeRecur (num, divisor)
+    print "Entering IsPrimeRecur"
+
+    if num <= 1
+        return false
+    if divisor == 1
+        return true
+    if num mod divisor returns 0
+        return false
+    result = IsPrimeRecur(num, divisor - 1)
+    print "Leaving IsPrimeRecur"
+    return result
+
+end function
+
 Pre:    num -- an integer used to check if a number is prime
         divisor -- an integer used to check if a number can be divisible
 Post:
@@ -75,7 +89,22 @@ bool IsPrimeRecur(int num, int divisor) {
 }
 
 /*
-PSEDUOCODE:
+function IsArrayPrimeRecur(arr, size)
+    print "Entering IsArrayPrimeRecur"
+
+    if size == 0
+        return true
+    end if
+
+    if not IsPrimeRecur(arr[size - 1], arr[size - 1] -1)
+        return false
+    end if
+
+    result = IsArrayPrimeRecur(arr, size -1)
+    print "Leaving IsArrayPrimeRecur"
+    return result
+end function
+
 Pre:    arr -- a non-empty array of integer numbers
         size -- the number of elements inside 'arr'
 Post:
