@@ -1,7 +1,8 @@
-// Name Block
-// Lab Number: 2
-// Name: Yijiang Ma & N  fill your name pls!!!
-// Purpose: Define the derived class Dollar
+/*
+LAB NUMBER: LAB 2
+NAME: NELSON LEE, YIJIANG MA
+PURPOSE OF THIS ASSIGNMENT: UTILIZIING A SMALL COIN PROGRAM TO DEMONSTRATE CLASSES, INHERITANCE, AND POLYMORPHISM IN CODE
+*/
 
 #ifndef DOLLAR_H
 #define DOLLAR_H

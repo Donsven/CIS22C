@@ -1,16 +1,17 @@
-// Name Block
-// Lab Number: 2
-// Name: Yijiang Ma & N  fill your name pls!!!
-// Purpose: Define the abstract base class Currency
+/*
+LAB NUMBER: LAB 2
+NAME: NELSON LEE, YIJIANG MA
+PURPOSE OF THIS ASSIGNMENT: UTILIZIING A SMALL COIN PROGRAM TO DEMONSTRATE CLASSES, INHERITANCE, AND POLYMORPHISM IN CODE
+*/
 
 #ifndef CURRENCY_H
 #define CURRENCY_H
 
-#include <string> // Include the string library for using the string class
-#include <stdexcept> // Include the standard exception library for using exceptions
-#include <sstream> // Include the sstream library for using stringstream
-#include <iomanip> // Include the iomanip library for using setw and setfill
-#include <cmath>   // Include cmath for rounding functions
+#include <string>           // Include the string library for using the string class
+#include <stdexcept>        // Include the standard exception library for using exceptions
+#include <sstream>          // Include the sstream library for using stringstream
+#include <iomanip>          // Include the iomanip library for using setw and setfill
+#include <cmath>            // Include cmath for rounding functions
 
 class Currency {
 protected:
@@ -32,63 +33,58 @@ public:
 
     virtual std::string getName() const = 0; // Pure virtual function to get the currency name
 
-    /**
-     * @brief Add another Currency object to this one.
-     *
-     * @param other The Currency object to add.
-     * @pre The other Currency object must be of the same type.
-     * @post The value of this Currency object is increased by the value of the other Currency object.
-     * @throws std::invalid_argument if the other Currency object is not of the same type.
-     */
+    /*
+    This function adds another Currency object to this one.
+    Pre:    other -- The Currency object to add.
+    Post: The value of this Currency object is increased by the value of the other Currency object.
+    Return: 
+    Throws: std::invalid_argument if the other Currency object is not of the same type.
+    */
     void add(const Currency& other); // Method to add another Currency object
 
-    /**
-     * @brief Subtract another Currency object from this one.
-     *
-     * @param other The Currency object to subtract.
-     * @pre The other Currency object must be of the same type and must not be greater than this Currency object.
-     * @post The value of this Currency object is decreased by the value of the other Currency object.
-     * @throws std::invalid_argument if the other Currency object is not of the same type or is greater than this Currency object.
-     */
+    /*
+    This function Subtract another Currency object from this one.
+    Pre:    other -- The Currency object to subtract.
+    Post:   The value of this Currency object is decreased by the value of the other Currency object.
+    Return: 
+    Throws: std::invalid_argument if the other Currency object is not of the same type or is greater than this Currency object.
+    */
     void subtract(const Currency& other); // Method to subtract another Currency object
 
-    /**
-     * @brief Check if another Currency object is of the same type.
-     *
-     * @param other The Currency object to compare.
-     * @return true if the other Currency object is of the same type, false otherwise.
-     * @pre None.
-     * @post None.
-     */
+    /*
+    Check if another Currency object is of the same type.
+    Pre:    other -- The Currency object to compare.
+    Post:   
+    Return: True if the other Currency object is of the same type, false otherwise.
+    Throws: 
+    */
     bool isSameType(const Currency& other) const; // Method to check if another Currency object is of the same type
 
-    /**
-     * @brief Check if another Currency object is equal to this one.
-     *
-     * @param other The Currency object to compare.
-     * @return true if the other Currency object is equal to this one, false otherwise.
-     * @pre The other Currency object must be of the same type.
-     * @post None.
-     */
+    /*
+    Check if another Currency object is equal to this one.
+    Pre:    other -- The Currency object to compare.
+    Post:   
+    Return: True if the other Currency object is equal to this one, false otherwise.
+    Throws: 
+    */
     bool isEqual(const Currency& other) const; // Method to check if another Currency object is equal
 
-    /**
-     * @brief Check if this Currency object is greater than another one.
-     *
-     * @param other The Currency object to compare.
-     * @return true if this Currency object is greater than the other, false otherwise.
-     * @pre The other Currency object must be of the same type.
-     * @post None.
-     */
+    /*
+    Check if this Currency object is greater than another one.
+    Pre:    other -- The Currency object to compare.
+    Post:   
+    Return: True if this Currency object is greater than the other, false otherwise.
+    Throws: 
+    */
     bool isGreater(const Currency& other) const; // Method to check if another Currency object is greater
 
-    /**
-     * @brief Convert the Currency object to a string representation.
-     *
-     * @return A string representation of the Currency object in the format "whole.fractional CurrencyName".
-     * @pre None.
-     * @post None.
-     */
+    /*
+    Convert the Currency object to a string representation.
+    Pre: 
+    Post:   
+    Return: A string representation of the Currency object in the format "whole.fractional CurrencyName".
+    Throws: 
+    */
     std::string toString() const; // Method to convert the Currency object to a string
 };
 

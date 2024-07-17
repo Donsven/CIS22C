@@ -1,7 +1,8 @@
-// Name Block
-// Lab Number: 2
-// Name: Yijiang Ma & N  fill your name pls!!!
-// Purpose: Define the derived class Pound
+/*
+LAB NUMBER: LAB 2
+NAME: NELSON LEE, YIJIANG MA
+PURPOSE OF THIS ASSIGNMENT: UTILIZIING A SMALL COIN PROGRAM TO DEMONSTRATE CLASSES, INHERITANCE, AND POLYMORPHISM IN CODE
+*/
 
 #ifndef POUND_H
 #define POUND_H

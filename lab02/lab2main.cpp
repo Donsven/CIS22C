@@ -1,7 +1,8 @@
-// Name Block
-// Lab Number: 2
-// Name: Yijiang Ma & N  fill your name pls!!!
-// Purpose: Main program for Currency Simulator
+/*
+LAB NUMBER: LAB 2
+NAME: NELSON LEE, YIJIANG MA
+PURPOSE OF THIS ASSIGNMENT: UTILIZIING A SMALL COIN PROGRAM TO DEMONSTRATE CLASSES, INHERITANCE, AND POLYMORPHISM IN CODE
+*/
 
 #include <iostream>
 #include <string>
