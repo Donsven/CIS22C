@@ -1,6 +1,14 @@
-// Changes made in this file:
-// 1. Inherited from the updated Currency class to include normalization logic and correct formatting.
-// 2. Added inline keyword to methods for potential performance optimization.
+/*
+LAB NUMBER: LAB 3
+NAME: NELSON LEE, YIJIANG MA
+PURPOSE OF THIS ASSIGNMENT: UTILIZIING A LARGER COIN PROGRAM TO DEMONSTRATE THE DATA STRUCTURES LISTS, STACKS, AND QUEUES
+*/
+
+/*
+Changes made in this file:
+1. Inherited from the updated Currency class to include normalization logic and correct formatting.
+2. Added inline keyword to methods for potential performance optimization.
+*/
 
 #ifndef DOLLAR_H
 #define DOLLAR_H
