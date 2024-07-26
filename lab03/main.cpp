@@ -13,7 +13,7 @@ PURPOSE OF THIS ASSIGNMENT: UTILIZIING A LARGER COIN PROGRAM TO DEMONSTRATE THE 
 #include "LLQueue.h"
 
 int main() {
-    std::cout << "Welcome to the demonstration of ADTs by Yijiang Ma & Nelson Lee" << std::endl;
+    std::cout << "Welcome to the demonstration of Lists, Stacks and Queues by Yijiang Ma & Nelson Lee" << std::endl;
 
     // Create an array of Dollar objects
     Dollar dollars[] = {

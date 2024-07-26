@@ -21,7 +21,13 @@ public:
     // Constructor initializes an empty list
     DoublyLinkedList() : count(0), head(nullptr), tail(nullptr) {}
 
-    // Destructor deletes all nodes to free memory
+    /*
+    Destructor deletes all nodes to free memory
+    Pre:  DoublyLinkedList exists
+    Post: All nodes in the list are deleted, freeing memory
+    Return: None
+    Throws: None
+    */
     ~DoublyLinkedList() {
         while (head != nullptr) {
             LinkNode* temp = head;
@@ -30,7 +36,14 @@ public:
         }
     }
 
-    // Adds a currency node at a specific index
+    /*
+    Adds a currency node at a specific index
+    Pre:  currency - pointer to Currency object
+          index - int value
+    Post: A new node containing the currency is added at the specified index
+    Return: None
+    Throws: Prints "Index out of bounds" if index is out of range
+    */
     void addCurrency(Currency* currency, int index) {
         if (index < 0 || index > count) {
             std::cerr << "Index out of bounds" << std::endl;
@@ -66,7 +79,13 @@ public:
         ++count;
     }
 
-    // Removes a node containing the specified currency
+    /*
+    Removes a node containing the specified currency
+    Pre:  currency - pointer to Currency object
+    Post: If a node containing the currency is found, removed from list and currency is returned
+    Return: Pointer to the removed Currency object, nullptr if not found
+    Throws: None
+    */
     Currency* removeCurrency(Currency* currency) {
         LinkNode* current = head;
         while (current != nullptr) {
@@ -95,7 +114,13 @@ public:
         return nullptr;
     }
 
-    // Removes a node at a specific index
+    /*
+    Removes a node at a specific index
+    Pre:  index - int value that needs to be between 0 and count - 1
+    Post: If a node at the specified index is found, removed from list and currency is returned
+    Return: Pointer to the removed Currency object, nullptr if index is out of range
+    Throws: Prints "Index out of bounds" if index is out of range
+    */
     Currency* removeCurrency(int index) {
         if (index < 0 || index >= count) {
             std::cerr << "Index out of bounds" << std::endl;
@@ -128,8 +153,14 @@ public:
         return removedData;
     }
 
-    // Finds the index of a node containing the specified currency
-    int findCurrency(Currency* currency) const {
+    /*
+    Finds the index of a node containing the specified currency
+    Pre:  currency - pointer to Currency object
+    Post: None
+    Return: Index of node containing the currency, or -1 if not found
+    Throws: None
+    */    
+   int findCurrency(Currency* currency) const {
         LinkNode* current = head;
         int index = 0;
         while (current != nullptr) {
@@ -142,7 +173,13 @@ public:
         return -1; // Not found
     }
 
-    // Returns the currency at a specific index
+    /*
+    Finds the index of a node containing the specified currency
+    Pre:  currency - pointer to Currency object    
+    Post: None
+    Return: Index of node containing the currency, or -1 if not found
+    Throws: None
+    */
     Currency* getCurrency(int index) const {
         if (index < 0 || index >= count) {
             std::cerr << "Index out of bounds" << std::endl;
@@ -156,7 +193,13 @@ public:
         return current->data;
     }
 
+    /*
     // Returns a string representation of the list
+    Pre:  None
+    Post: None
+    Return: A string representation of the list
+    Throws: None
+    */
     std::string printList() const {
         std::ostringstream oss;
         LinkNode* current = head;
