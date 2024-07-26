@@ -14,7 +14,7 @@ PURPOSE OF THIS ASSIGNMENT: UTILIZIING A LARGER COIN PROGRAM TO DEMONSTRATE THE 
 
 int main() {
     std::cout << "Welcome to the demonstration of Lists, Stacks and Queues by Yijiang Ma & Nelson Lee" << std::endl;
-
+    std::cout << "-----------------------------------------------------------------------------------" << std::endl;
     // Create an array of Dollar objects
     Dollar dollars[] = {
         Dollar(57.12), Dollar(23.44), Dollar(87.43), Dollar(68.99), Dollar(111.22),
@@ -28,7 +28,7 @@ int main() {
     for (int i = 6; i >= 0; --i) {
         list.addCurrency(&dollars[i], 0);
     }
-
+    std::cout << "|LINKED LISTS|" << std::endl;
     std::cout << "List after adding first 7 Dollar objects in reverse order: " << list.printList() << std::endl;
 
     int index = list.findCurrency(&dollars[2]);
@@ -45,6 +45,7 @@ int main() {
     list.removeCurrency(list.getCount() / 3);
     std::cout << "List after additional removals: " << list.printList() << std::endl;
 
+    std::cout << std::endl << "|STACKS|" << std::endl;
     // Create an LLStack object and perform operations
     LLStack stack;
     for (int i = 13; i < 20; ++i) {
@@ -63,8 +64,9 @@ int main() {
 
     stack.pop();
     stack.pop();
-    std::cout << "Stack contents: " << stack.toString() << std::endl;
+    std::cout << "Stack contents after 3 pops, 5 pushes and two pops again: " << stack.toString() << std::endl;
 
+    std::cout << std::endl << "|QUEUES|" << std::endl;
     // Create an LLQueue object and perform operations
     LLQueue queue;
     for (int i = 5, count = 0; i < 20 && count < 7; i += 2, ++count) {
@@ -84,9 +86,9 @@ int main() {
     queue.dequeue();
     queue.dequeue();
     queue.dequeue();
-    std::cout << "Queue contents: " << queue.toString() << std::endl;
+    std::cout << "Queue contents after 2 dequeues, 5 enqueues and 3 more dequeues: " << queue.toString() << std::endl;
 
-    std::cout << "End of the program. Goodbye!" << std::endl;
+    std::cout << std::endl << "Thanks for observing our program. Goodbye!" << std::endl;
 
     return 0;
 }

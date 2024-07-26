@@ -201,17 +201,18 @@ public:
     Throws: None
     */
     std::string printList() const {
-        std::ostringstream oss;
-        LinkNode* current = head;
-        while (current != nullptr) {
-            oss << current->data->toString();
-            current = current->next;
-            if (current != nullptr) {
-                oss << "\t";
-            }
+    std::ostringstream oss;
+    LinkNode* current = head;
+    while (current != nullptr) {
+        oss << std::setw(8) << std::left << current->data->toString();
+        current = current->next;
+        if (current != nullptr) {
+            oss << " "; 
         }
-        return oss.str();
     }
+    return oss.str();
+}
+
 
     // Returns the number of nodes in the list
     int getCount() const {
