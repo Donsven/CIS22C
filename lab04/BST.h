@@ -1,3 +1,10 @@
+/*
+LAB NUMBER: LAB 4
+NAME: NELSON LEE, YIJIANG MA
+PURPOSE OF THIS ASSIGNMENT: DECLARE AND CREATE A BINARY SEARCH TREE, IMPLEMENTING THE FOUR TRAVERSAL METHODS AND MORE
+*/
+
+
 #ifndef BST_H
 #define BST_H
 
@@ -11,7 +18,14 @@ class BST {
 private:
     BSTNode* root;
 
-    // Helper method to insert a new node in the BST
+    /*
+    Inserts a new node with the given Dollar object into the Binary Search Tree.
+    Pre:    node -- the root node of the BST or subtree
+            dollar -- the Dollar object to be inserted
+    Post:   
+    Return: a pointer to the root node of the BST after the insertion
+    Throws: 
+*/
     BSTNode* insert(BSTNode* node, const Dollar& dollar) {
         if (node == nullptr) {
             return new BSTNode(dollar);
@@ -24,7 +38,14 @@ private:
         return node;
     }
 
-    // Helper method for in-order traversal
+    /*
+    Performs in-order traversal of the BST and outputs the node data to the provided output stream.
+    Pre:    node -- the root node of the BST or subtree
+            os -- the output stream to which the node data is written
+    Post:   
+    Return: 
+    Throws: 
+    */
     void inOrderTraversal(BSTNode* node, std::ostream& os) const {
         if (node == nullptr) return;
         inOrderTraversal(node->getLeft(), os);
@@ -32,7 +53,14 @@ private:
         inOrderTraversal(node->getRight(), os);
     }
 
-    // Helper method for pre-order traversal
+    /*
+    Performs pre-order traversal of the BST and outputs the node data to the provided output stream.
+    Pre:    node -- the root node of the BST or subtree
+            os -- the output stream to which the node data is written
+    Post:   
+    Return: 
+    Throws: 
+    */
     void preOrderTraversal(BSTNode* node, std::ostream& os) const {
         if (node == nullptr) return;
         os << node->getData().toString() << "\t";
@@ -40,7 +68,14 @@ private:
         preOrderTraversal(node->getRight(), os);
     }
 
-    // Helper method for post-order traversal
+    /*
+    Performs post-order traversal of the BST and outputs the node data to the provided output stream.
+    Pre:    node -- the root node of the BST or subtree
+            os -- the output stream to which the node data is written
+    Post:   
+    Return: 
+    Throws: 
+    */
     void postOrderTraversal(BSTNode* node, std::ostream& os) const {
         if (node == nullptr) return;
         postOrderTraversal(node->getLeft(), os);
@@ -48,7 +83,13 @@ private:
         os << node->getData().toString() << "\t";
     }
 
-    // Helper method to find the minimum value node
+    /*
+    Finds the node with the minimum value in the BST.
+    Pre:    node -- the root node of the BST or subtree
+    Post:   
+    Return: a pointer to the node with the minimum value in the BST
+    Throws: 
+    */
     BSTNode* minValueNode(BSTNode* node) {
         BSTNode* current = node;
         while (current && current->getLeft() != nullptr) {
@@ -57,7 +98,14 @@ private:
         return current;
     }
 
-    // Helper method to delete a node in the BST
+    /*
+    Deletes a node with the given Dollar object from the BST.
+    Pre:    root -- the root node of the BST or subtree
+            dollar -- the Dollar object to be deleted
+    Post:   
+    Return: a pointer to the root node of the BST after the deletion
+    Throws: 
+    */
     BSTNode* deleteNode(BSTNode* root, const Dollar& dollar) {
         if (root == nullptr) return root;
 
@@ -83,7 +131,14 @@ private:
         return root;
     }
 
-    // Helper method for breadth-first traversal
+    /*
+    Performs breadth-first traversal of the BST and outputs the node data to the provided output stream.
+    Pre:    node -- the root node of the BST or subtree
+            os -- the output stream to which the node data is written
+    Post:   
+    Return: 
+    Throws: 
+    */
     void breadthFirstTraversal(BSTNode* node, std::ostream& os) const {
         if (node == nullptr) return;
 
