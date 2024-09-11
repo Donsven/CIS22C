@@ -22,7 +22,7 @@ bool isPalindrome(int input) {
         reversed = reversed * 10 + input % 10;
         input /= 10;
     }
-    return original == r
+    return original == reversed;
 }
 
 // Function to sort an array in descending order using selection sort
